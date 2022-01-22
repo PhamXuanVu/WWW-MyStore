@@ -13,6 +13,8 @@ import javax.persistence.Table;
 
 import org.hibernate.annotations.Nationalized;
 
+import com.www.Util.UtilClass;
+
 
 @Entity
 @Table(name = "san_pham")
@@ -96,6 +98,9 @@ public class SanPham {
 				+ donGia + ", soLuong=" + soLuong + ", hinhAnh=" + hinhAnh + ", moTa=" + moTa + "]";
 	}
 	
-	
+	public String getGiaFormat() {
+        UtilClass utilClass = new UtilClass();
+        return utilClass.formatVND(this.getDonGia());
+    }
 
 }

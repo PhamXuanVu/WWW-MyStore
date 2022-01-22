@@ -11,9 +11,9 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<jsp:include page="layout/header.jsp" />
+	<jsp:include page="../layout/header.jsp" />
 	<div class="row">
-		<c:forEach items="${sanPham}" var="sp">
+		<c:forEach items="${keo}" var="sp">
 			<div class="card" style="width: 200px; margin-left: 50px; margin-top: 50px; text-align: center;">
 				<c:url var="image" value="${sp.hinhAnh}" />
 				<img class="rounded" style="heigth: 250px"
