@@ -15,6 +15,8 @@ import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.Nationalized;
+
 @Entity
 @Table(name = "nguoi_dung")
 public class NguoiDung implements Serializable {
@@ -29,14 +31,16 @@ public class NguoiDung implements Serializable {
 	@Column(name = "id")
 	private int id;
 
+	@Nationalized
 	private String hoTenDem;
 
+	@Nationalized
 	private String ten;
 
+	@Nationalized
 	private String soDienThoai;
 
-	private boolean gioiTinh;
-
+	@Nationalized
 	private String diaChi;
 
 
@@ -89,15 +93,6 @@ public class NguoiDung implements Serializable {
 	}
 
 
-	public boolean isGioiTinh() {
-		return gioiTinh;
-	}
-
-
-	public void setGioiTinh(boolean gioiTinh) {
-		this.gioiTinh = gioiTinh;
-	}
-
 
 	public String getDiaChi() {
 		return diaChi;
@@ -134,14 +129,13 @@ public class NguoiDung implements Serializable {
 	}
 
 
-	public NguoiDung(int id, String hoTenDem, String ten, String soDienThoai, boolean gioiTinh, String diaChi,
+	public NguoiDung(int id, String hoTenDem, String ten, String soDienThoai, String diaChi,
 			User user, Set<HoaDon> hoaDons) {
 		super();
 		this.id = id;
 		this.hoTenDem = hoTenDem;
 		this.ten = ten;
 		this.soDienThoai = soDienThoai;
-		this.gioiTinh = gioiTinh;
 		this.diaChi = diaChi;
 		this.user = user;
 		this.hoaDons = hoaDons;
@@ -155,8 +149,8 @@ public class NguoiDung implements Serializable {
 	@Override
 	public String toString() {
 		return "NguoiDung [id=" + id + ", hoTenDem=" + hoTenDem + ", ten=" + ten + ", soDienThoai=" + soDienThoai
-				+ ", gioiTinh=" + gioiTinh + ", diaChi=" + diaChi + ", user=" + user + ", hoaDons=" + hoaDons + "]";
+				+ ", diaChi=" + diaChi + ", user=" + user + ", hoaDons=" + hoaDons + "]";
 	}
 
-	
+
 }

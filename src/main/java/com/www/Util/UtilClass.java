@@ -8,7 +8,7 @@ import java.text.DecimalFormat;
 public class UtilClass {
     public String formatVND(double money) {
         DecimalFormat formatter = new DecimalFormat("###,###,###");
-        return formatter.format(money)+"VND";
+        return formatter.format(money)+" VND";
     }
 
 }

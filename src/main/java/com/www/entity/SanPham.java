@@ -24,14 +24,21 @@ public class SanPham {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int sanPhamId;
 	
+	@Nationalized
 	private String tenSanPham;
     
+	@Nationalized
 	private LoaiHang loaiSanPham;
 	
 	private double donGia;
+	
+	@Nationalized
 	private int soLuong;
+	
+	@Nationalized
 	private String hinhAnh;
 	
+	@Nationalized
 	private String moTa;
 	
 	@OneToMany(fetch = FetchType.EAGER,targetEntity = ChiTietHoaDon.class,cascade = CascadeType.ALL)

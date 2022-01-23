@@ -47,12 +47,12 @@ public class DataSeendingListener implements ApplicationListener {
             roles.add(roleRepository.findByName("ROLE_ADMIN"));
             roles.add(roleRepository.findByName("ROLE_MEMBER"));
             user.setRoles(roles);
-//            userRepository.save(user);
 
             NguoiDung nguoiDung = new NguoiDung();
             nguoiDung.setHoTenDem("Pham Xuan");
             nguoiDung.setTen("Vu");
             nguoiDung.setSoDienThoai("0999999999");
+            nguoiDung.setDiaChi("12, Nguyễn Văn Bảo,P4,Gò Vấp,HCM");
             nguoiDung.setUser(user);
 
             nguoiDungRepository.save(nguoiDung);
@@ -69,6 +69,7 @@ public class DataSeendingListener implements ApplicationListener {
             nguoiDung.setHoTenDem("Nguyen Thi Quynh");
             nguoiDung.setTen("Mai");
             nguoiDung.setSoDienThoai("0999999999");
+            nguoiDung.setDiaChi("12, Nguyễn Văn Bảo,P4,Gò Vấp,HCM");
             nguoiDung.setUser(user);
 
             nguoiDungRepository.save(nguoiDung);

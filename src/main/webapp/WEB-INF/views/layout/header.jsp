@@ -1,6 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ taglib prefix="sec"
-	uri="http://www.springframework.org/security/tags"%>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -19,6 +18,7 @@ body {
 	<c:url var="login" value="/user/login" />
 	<c:url var="keo" value="/danhmuc/keo" />
 	<c:url var="socola" value="/danhmuc/socola" />
+	<c:url var="admin" value="/admin/" />
 	<div>
 		<h1 style="text-align: center; color: red;">MTV-Shop</h1>
 	</div>
@@ -65,7 +65,7 @@ body {
 							<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
 								<sec:authorize
 									access="hasRole('ROLE_ADMIN') and isAuthenticated()">
-									<li><a class="dropdown-item" href="">Trang Admin</a></li>
+									<li><a class="dropdown-item" href="${admin }">Trang Admin</a></li>
 								</sec:authorize>
 								<li><a class="dropdown-item"
 									href="${pageContext.request.contextPath}/perform_logout">Đăng

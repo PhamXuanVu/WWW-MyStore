@@ -30,4 +30,16 @@ public class SanPhamController {
 		model.addAttribute("socola", sanPhamRepository.getSanPhamByLoaiSocola());
 	    return "/danhmuc/socola";
 	}
+	
+	@GetMapping("/socola-admin")
+	public String getSanPhamByLoaiSocolaAdmin(Model model) {
+		model.addAttribute("socola", sanPhamRepository.getSanPhamByLoaiSocola());
+	    return "/admin/danh-sach-socola";
+	}
+	
+	@GetMapping("/keo-admin")
+	public String getSanPhamByLoaiKeoAdmin(Model model) {
+		model.addAttribute("keo", sanPhamRepository.getSanPhamByLoaiKeo());
+	    return "/admin/danh-sach-keo";
+	}
 }

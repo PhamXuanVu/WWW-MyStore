@@ -23,6 +23,9 @@ public class NguoiDungDTO {
 	@Email(message = "Email không đúng định dạng")
     private String email;
 	
+	@NotNull(message = "Địa không được để trống")
+    private String diaChi;
+	
 	@NotEmpty(message = "Mật khẩu không được để trống")
 	@Min(value = 6, message = "Mật khẩu phải từ 6 kí tự trở lên")
     private String matKhau;
@@ -57,6 +60,14 @@ public class NguoiDungDTO {
 
 	public void setEmail(String email) {
 		this.email = email;
+	}
+	
+	public String getDiaChi() {
+		return diaChi;
+	}
+
+	public void setDiaChi(String diaChi) {
+		this.diaChi = diaChi;
 	}
 
 	public String getMatKhau() {

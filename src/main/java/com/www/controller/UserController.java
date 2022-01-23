@@ -70,6 +70,7 @@ public class UserController {
                 user.setRoles(roles);
                 user.setEmail(nguoiDungDTO.getEmail());
                 user.setPassword(passwordEncoder.encode(nguoiDungDTO.getMatKhau()));
+         
                 userRepository.save(user);
 
                 NguoiDung nguoiDung = new NguoiDung();
@@ -77,6 +78,7 @@ public class UserController {
                 nguoiDung.setHoTenDem(nguoiDungDTO.getHoTenDem());
                 nguoiDung.setTen(nguoiDungDTO.getTen());
                 nguoiDung.setSoDienThoai(nguoiDungDTO.getSoDienThoai());
+                nguoiDung.setDiaChi(nguoiDungDTO.getDiaChi());
                 nguoiDungRepository.save(nguoiDung);
 
                 return new RedirectView(request.getContextPath() + "/user/login?success");

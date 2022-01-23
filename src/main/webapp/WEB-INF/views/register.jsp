@@ -31,14 +31,11 @@
 									<label>Họ Tên đệm </label> <input name="hoTenDem" type="text"
 										class="form-control" placeholder="">
 								</div>
-								<!-- form-group end.// -->
 								<div class="col form-group">
 									<label>Tên</label> <input name="ten" type="text"
 										class="form-control" placeholder=" ">
 								</div>
-								<!-- form-group end.// -->
 							</div>
-							<!-- form-row end.// -->
 							<div class="form-group">
 								<label>Email address</label> <input name="email" type="email"
 									class="form-control" placeholder="">
@@ -48,12 +45,14 @@
 									type="text" class="form-control" placeholder="">
 								<form:errors path="soDienThoai" cssClass="error" />
 							</div>
-							<!-- form-row.// -->
+							<div class="col form-group">
+									<label>Địa chỉ </label> <input name="diaChi" type="text"
+										class="form-control" placeholder="">
+								</div>
 							<div class="form-group">
 								<label>Mật khẩu</label> <input name="matKhau"
 									class="form-control" type="password">
 							</div>
-							<!-- form-group end.// -->
 							<div class="form-group">
 								<button type="submit" class="btn btn-primary btn-block">
 									Đăng ký</button>

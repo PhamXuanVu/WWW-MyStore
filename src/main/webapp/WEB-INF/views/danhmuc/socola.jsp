@@ -20,7 +20,7 @@
 					src="${image}" alt="Card image cap">
 				<div class="card-body">
 					<p class="card-text" style="font-weight: 700;">${sp.tenSanPham}</p>
-					<p class="card-text">${sp.donGia} VND</p>
+					<p class="card-text">${sp.getGiaFormat()}</p>
 					<div class="button_actions clearfix">
 
 						<button id="btnSubmit"
