@@ -21,7 +21,7 @@ import com.www.Util.UtilClass;
 public class SanPham {
 	
 	@Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int sanPhamId;
 	
 	@Nationalized

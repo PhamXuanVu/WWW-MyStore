@@ -1,6 +1,7 @@
 eclipse.preferences.version=1
 encoding//src/main/java/com/www/config/DataSeendingListener.java=UTF-8
 encoding//src/main/java/com/www/controller/MainController.java=UTF-8
+encoding//src/main/java/com/www/controller/SanPhamController.java=UTF-8
 encoding//src/main/java/com/www/dto/NguoiDungDTO.java=UTF-8
 encoding//src/main/java/com/www/entity/LoaiHang.java=UTF-8
 encoding//src/main/webapp/WEB-INF/views/danhmuc/keo.jsp=UTF-8

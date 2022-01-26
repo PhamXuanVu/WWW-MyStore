@@ -11,6 +11,7 @@
 <body>
 	<c:url var="socola" value="/danhmuc/socola-admin" />
 	<c:url var="keo" value="/danhmuc/keo-admin" />
+	<c:url var="addKeo" value="/danhmuc/form-add-keo" />
 	<div class="d-flex" id="wrapper">
 		<!-- Sidebar-->
 		<div class="border-end bg-white" id="sidebar-wrapper">
@@ -43,7 +44,7 @@
 					class="list-group-item list-group-item-action list-group-item-light p-3"
 					href="#!">Shortcuts</a> <a
 					class="list-group-item list-group-item-action list-group-item-light p-3"
-					href="#!">Overview</a> <a
+					href="${addKeo }">Overview</a> <a
 					class="list-group-item list-group-item-action list-group-item-light p-3"
 					href="#!">Events</a>
 

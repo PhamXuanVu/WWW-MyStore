@@ -7,7 +7,7 @@
 <title>Admin</title>
 </head>
 <body>
-
+	<c:url var="addKeo" value="/danhmuc/form-add-keo" />
 	<div class="container">
 		<div class="row">
 			<div class="col-12">
@@ -19,6 +19,9 @@
 				<jsp:include page="../layout/sidebar-admin.jsp" />
 			</div>
 			<div class="col-8">
+				<button type="button" class="btn btn-primary">
+					<a style="text-decoration: none" class="link-light" href="${addKeo }">Thêm sản phẩm</a>
+				</button>
 				<table class="table" style="text-align: center;">
 					<thead>
 						<tr>
@@ -44,10 +47,17 @@
 								<td>${sp.moTa}</td>
 								<td>
 									<div class="col">
-										<button type="button" class="btn btn-outline-warning">Sửa</button>
+										<button type="button" class="btn btn-outline-warning">
+											<a style="text-decoration: none" class="link-warning"
+												href="${pageContext.request.contextPath }/danhmuc/update/${sp.id }">Sửa</a>
+										</button>
 									</div>
 									<div class="col">
-										<button type="button" class="btn btn-outline-danger">Xóa</button>
+										<button type="button" class="btn btn-outline-danger">
+											<a style="text-decoration: none" class="link-danger"
+												href="${pageContext.request.contextPath }/danhmuc/deleteKeo/${sp.id }"
+												onclick="return confirm('Bạn có muốn xóa?')">Xóa</a>
+										</button>
 									</div>
 								</td>
 
