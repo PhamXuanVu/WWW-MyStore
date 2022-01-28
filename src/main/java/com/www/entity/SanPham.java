@@ -41,7 +41,7 @@ public class SanPham {
 	@Nationalized
 	private String moTa;
 	
-	@OneToMany(fetch = FetchType.EAGER,targetEntity = ChiTietHoaDon.class,cascade = CascadeType.ALL)
+	@OneToMany(mappedBy = "sanPham", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private Set<ChiTietHoaDon> hoaDons;
 	
 	public int getId() {

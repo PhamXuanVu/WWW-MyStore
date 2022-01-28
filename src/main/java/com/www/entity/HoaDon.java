@@ -1,7 +1,6 @@
 package com.www.entity;
 
-import java.util.Date;
-import java.util.List;
+import java.util.HashSet;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
@@ -15,6 +14,8 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.www.Util.UtilClass;
+
 @Entity
 @Table(name = "hoa_don")
 public class HoaDon {
@@ -23,10 +24,8 @@ public class HoaDon {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int hoaDonId;
 	
-	private Date ngayMua;
-	
-	@OneToMany(fetch = FetchType.EAGER,targetEntity = ChiTietHoaDon.class,cascade = CascadeType.ALL)
-    private Set<ChiTietHoaDon> sanPhams;
+	@OneToMany(mappedBy = "hoaDon", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    private Set<ChiTietHoaDon> sanPhams = new HashSet<ChiTietHoaDon>();
 	
 	@ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "nguoiDungId")
@@ -34,10 +33,9 @@ public class HoaDon {
 	
 	
 
-	public HoaDon(int hoaDonId, Date ngayMua, Set<ChiTietHoaDon> sanPhams, NguoiDung nguoiDung) {
+	public HoaDon(int hoaDonId, Set<ChiTietHoaDon> sanPhams, NguoiDung nguoiDung) {
 		super();
 		this.hoaDonId = hoaDonId;
-		this.ngayMua = ngayMua;
 		this.sanPhams = sanPhams;
 		this.nguoiDung = nguoiDung;
 	}
@@ -50,13 +48,6 @@ public class HoaDon {
 		this.hoaDonId = hoaDonId;
 	}
 
-	public Date getNgayMua() {
-		return ngayMua;
-	}
-
-	public void setNgayMua(Date ngayMua) {
-		this.ngayMua = ngayMua;
-	}
 
 	public Set<ChiTietHoaDon> getSanPhams() {
 		return sanPhams;
@@ -83,12 +74,19 @@ public class HoaDon {
 
 	@Override
 	public String toString() {
-		return "HoaDon [hoaDonId=" + hoaDonId + ", ngayMua=" + ngayMua + ", sanPhams=" + sanPhams + ", nguoiDung="
+		return "HoaDon [hoaDonId=" + hoaDonId + ", ngayMua=" + ", sanPhams=" + sanPhams + ", nguoiDung="
 				+ nguoiDung + "]";
 	}
 
-	
-	
-	
+	public double tinhTongTienTrongGioHang() {
+        double sum = 0;
+        for (ChiTietHoaDon chiTietHoaDon : this.getSanPhams()) {
+            sum += chiTietHoaDon.tinhTienChiTietHoaDon();
+        }
+        return sum;
+    }
 
+    public String getTongTienChiTietHoaDonFormat() {
+        return new UtilClass().formatVND(this.tinhTongTienTrongGioHang());
+    }
 }

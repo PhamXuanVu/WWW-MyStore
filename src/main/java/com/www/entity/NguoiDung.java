@@ -48,7 +48,6 @@ public class NguoiDung implements Serializable {
 	@JoinColumn(name = "user_id", nullable = false)
 	private User user;
 
-
 	@OneToMany(mappedBy = "nguoiDung", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	private Set<HoaDon> hoaDons;
 

@@ -1,5 +1,6 @@
 package com.www.entity;
 
+import java.util.Date;
 import java.util.Objects;
 
 import javax.persistence.CascadeType;
@@ -31,19 +32,10 @@ public class ChiTietHoaDon {
 	
 	private int soLuong;
 	
+	private Date ngayMua;
 	
 	
-	public ChiTietHoaDon() {
-		super();
 	
-	}
-	public ChiTietHoaDon(ChiTietHoaDonPK id, SanPham sanPham, HoaDon hoaDon, int soLuong) {
-		super();
-		this.id = id;
-		this.sanPham = sanPham;
-		this.hoaDon = hoaDon;
-		this.soLuong = soLuong;
-	}
 	public ChiTietHoaDonPK getId() {
 		return id;
 	}
@@ -67,6 +59,12 @@ public class ChiTietHoaDon {
 	}
 	public void setSoLuong(int soLuong) {
 		this.soLuong = soLuong;
+	}
+	public Date getNgayMua() {
+		return ngayMua;
+	}
+	public void setNgayMua(Date ngayMua) {
+		this.ngayMua = ngayMua;
 	}
 	@Column(name = "gia_ban", nullable = false)
     public double tinhGiaBan() {
