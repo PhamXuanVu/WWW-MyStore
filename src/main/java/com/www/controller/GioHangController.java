@@ -8,7 +8,6 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -49,7 +48,6 @@ public class GioHangController {
 
             hoaDon.setSanPhams(chiTietHoaDons);
             session.setAttribute("cart", hoaDon);
-            System.out.println("AAA"+hoaDon);
         } else {
             HoaDon hoaDon = (HoaDon) session.getAttribute("cart");
             int flag = 0;
@@ -86,5 +84,4 @@ public class GioHangController {
         NguoiDung nguoiDung = (NguoiDung) model.getAttribute("nguoiDung");
         return "thanh-toan";
     }
-
 }

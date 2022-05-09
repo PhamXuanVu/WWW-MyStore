@@ -16,15 +16,32 @@
 	<c:url var="homePageUrl" value="/" />
 	<div class="container">
 		<jsp:include page="layout/header.jsp" />
+		<c:if test="${param.success}">
+			<div class="row">
+				<div class="col-12">
+					<div class="alert alert-success" role="alert">Đặt hàng thành
+						công. Tiếp tục mua hàng nào.</div>
+				</div>
+			</div>
+		</c:if>
+
+		<c:if test="${param.failure}">
+			<div class="row">
+				<div class="col-12">
+					<div class="alert alert-danger" role="alert">Đặt hàng không
+						thành công, có lỗi xảy ra.</div>
+				</div>
+			</div>
+		</c:if>
 		<form class="m-auto"
-			action="${pageContext.request.contextPath}/danhmuc/form-add-keo"
+			action="${pageContext.request.contextPath}/hoaDon/add"
 			method="POST" enctype="application/x-www-form-urlencoded">
 			<div class="row">
 				<div class="col-xs-6 col-sm-6 col-md-6">
 					<address>
-						<strong>${nguoiDung.getHoTenDem()} ${nguoiDung.getTen()}</strong>
-						<br> ${nguoiDung.getDiaChi()} <br>
-						${nguoiDung.getSoDienThoai()}
+						<strong name="">${nguoiDung.getHoTenDem()} ${nguoiDung.getTen()}</strong>
+						<br name="diaChi"> ${nguoiDung.getDiaChi()} <br>
+						<p name="soDienThoai">${nguoiDung.getSoDienThoai()}</p>
 					</address>
 				</div>
 				<div class="col-xs-6 col-sm-6 col-md-6 text-right date">
@@ -53,13 +70,13 @@
 								<td>
 									<div class="cart-info">
 										<div>
-											<p>${chiTietHoaDon.sanPham.tenSanPham}</p>
+											<p name="tenSanPham">${chiTietHoaDon.sanPham.tenSanPham}</p>
 										</div>
 									</div>
 								</td>
-								<td><input type="number" value="${chiTietHoaDon.soLuong}"
+								<td><input name= "soLuong" type="number" value="${chiTietHoaDon.soLuong}"
 									disabled /></td>
-								<td>${chiTietHoaDon.tinhGiaBanFormat()}</td>
+								<td name="donGia">${chiTietHoaDon.tinhGiaBanFormat()}</td>
 								<td>${chiTietHoaDon.getTongTien()}</td>
 							</tr>
 						</c:forEach>

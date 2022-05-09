@@ -7,6 +7,8 @@ import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.MapsId;
@@ -17,6 +19,8 @@ import com.www.Util.UtilClass;
 @Entity
 @Table(name = "chi_tiet_hoa_don")
 public class ChiTietHoaDon {
+	
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@EmbeddedId
 	private ChiTietHoaDonPK id;
 	
@@ -32,7 +36,6 @@ public class ChiTietHoaDon {
 	
 	private int soLuong;
 	
-	private Date ngayMua;
 	
 	
 	
@@ -60,12 +63,6 @@ public class ChiTietHoaDon {
 	public void setSoLuong(int soLuong) {
 		this.soLuong = soLuong;
 	}
-	public Date getNgayMua() {
-		return ngayMua;
-	}
-	public void setNgayMua(Date ngayMua) {
-		this.ngayMua = ngayMua;
-	}
 	@Column(name = "gia_ban", nullable = false)
     public double tinhGiaBan() {
         return this.getSanPham().getDonGia();
@@ -90,5 +87,10 @@ public class ChiTietHoaDon {
         UtilClass utilClass = new UtilClass();
         return utilClass.formatVND(this.tinhTienChiTietHoaDon());
     }
-
+	@Override
+	public String toString() {
+		return "ChiTietHoaDon [id=" + id + ", sanPham=" + sanPham + ", hoaDon=" + hoaDon + ", soLuong=" + soLuong
+				+ ", ngayMua=" + "]";
+	}
+    
 }

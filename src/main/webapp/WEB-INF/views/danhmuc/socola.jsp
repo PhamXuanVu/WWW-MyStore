@@ -26,7 +26,8 @@
 						<button id="btnSubmit"
 							class="btn btn_base btn_add_cart btn-cart add_to_cart"
 							style="background-color: red">
-							<span class="text_1">Xem chi tiết</span>
+							<span class="text_1"><a style="text-decoration: none" class="link-warning"
+												href="${pageContext.request.contextPath }/chiTietSP/${sp.id }">Xem chi tiết</a></span>
 						</button>
 
 					</div>

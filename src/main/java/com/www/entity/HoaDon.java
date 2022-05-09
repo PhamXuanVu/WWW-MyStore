@@ -1,5 +1,6 @@
 package com.www.entity;
 
+import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -27,17 +28,29 @@ public class HoaDon {
 	@OneToMany(mappedBy = "hoaDon", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private Set<ChiTietHoaDon> sanPhams = new HashSet<ChiTietHoaDon>();
 	
-	@ManyToOne(cascade = CascadeType.ALL)
+	@ManyToOne(cascade = CascadeType.MERGE)
     @JoinColumn(name = "nguoiDungId")
     private NguoiDung nguoiDung;
 	
+	private Date ngayMua;
+	
 	
 
-	public HoaDon(int hoaDonId, Set<ChiTietHoaDon> sanPhams, NguoiDung nguoiDung) {
+
+	public HoaDon(int hoaDonId, Set<ChiTietHoaDon> sanPhams, NguoiDung nguoiDung, Date ngayMua) {
 		super();
 		this.hoaDonId = hoaDonId;
 		this.sanPhams = sanPhams;
 		this.nguoiDung = nguoiDung;
+		this.ngayMua = ngayMua;
+	}
+
+	public Date getNgayMua() {
+		return ngayMua;
+	}
+
+	public void setNgayMua(Date ngayMua) {
+		this.ngayMua = ngayMua;
 	}
 
 	public int getHoaDonId() {
@@ -72,11 +85,8 @@ public class HoaDon {
 		// TODO Auto-generated constructor stub
 	}
 
-	@Override
-	public String toString() {
-		return "HoaDon [hoaDonId=" + hoaDonId + ", ngayMua=" + ", sanPhams=" + sanPhams + ", nguoiDung="
-				+ nguoiDung + "]";
-	}
+	
+
 
 	public double tinhTongTienTrongGioHang() {
         double sum = 0;
@@ -89,4 +99,5 @@ public class HoaDon {
     public String getTongTienChiTietHoaDonFormat() {
         return new UtilClass().formatVND(this.tinhTongTienTrongGioHang());
     }
+    
 }

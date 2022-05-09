@@ -72,7 +72,7 @@ public class SanPhamController {
 
 		sanPhamRepository.save(sanPham);
 
-		return new RedirectView(request.getContextPath() + "/danhmuc/keo-admin");
+		return new RedirectView(request.getContextPath() + "/danhmuc/keo-admin?addSuccess=true");
 
 	}
 
@@ -94,20 +94,20 @@ public class SanPhamController {
 
 		sanPhamRepository.save(sanPham);
 
-		return new RedirectView(request.getContextPath() + "/danhmuc/socola-admin");
+		return new RedirectView(request.getContextPath() + "/danhmuc/socola-admin?addSuccess=true");
 
 	}
 
 	@RequestMapping(value = "deleteKeo/{id}", method = RequestMethod.GET)
 	public String deleteKeo(@PathVariable("id") int id) {
 		sanPhamRepository.deleteById(id);
-		return "redirect:/danhmuc/keo-admin";
+		return "redirect:/danhmuc/keo-admin?deleteSuccess=true";
 	}	
 	
 	@RequestMapping(value = "deleteSocola/{id}", method = RequestMethod.GET)
 	public String deleteSocola(@PathVariable("id") int id) {
 		sanPhamRepository.deleteById(id);
-		return "redirect:/danhmuc/socola-admin";
+		return "redirect:/danhmuc/socola-admin?deleteSuccess=true";
 	}
 
 	@RequestMapping(value="/update/{id}")   
@@ -123,9 +123,15 @@ public class SanPhamController {
 		sanPhamRepository.save(sanPham);
 		
 		if(sanPham.getLoaiSanPham().toString().equals("Socola")) {
-			return "redirect:/danhmuc/socola-admin";
+			return "redirect:/danhmuc/socola-admin?updateSuccess=true";
 		}
 		
-		return "redirect:/danhmuc/keo-admin";
-	}  
+		return "redirect:/danhmuc/keo-admin?updateSuccess=true";
+	}
+	
+	@RequestMapping("/timkiem")
+	public String timKiemSanPham(String tenSanPham,Model model) {
+		model.addAttribute("sanPhamTimKiem",sanPhamRepository.getSanPhamByTenSanPham("%"+tenSanPham+"%"));
+		return "/tim-kiem";
+	}
 }

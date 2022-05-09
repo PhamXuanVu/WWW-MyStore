@@ -12,9 +12,16 @@
 <title>Giỏ hàng</title>
 </head>
 <body>
+	<c:url var="login" value="/user/login" />
 	<c:url var="homePageUrl" value="/" />
 	<div class="container">
 		<jsp:include page="layout/header.jsp" />
+		<c:if test="${pageContext.request.userPrincipal.name == null}">
+			Bạn chưa đăng nhập
+			<a class="navbar-brand" href="${login }">Đăng nhập ngay</a>
+
+		</c:if>
+		<c:if test="${pageContext.request.userPrincipal.name != null}">
 		<c:choose>
 			<c:when test="${cart == null}">
 				<div style="text-align: center;" class="row cart__list-order-detail">
@@ -75,6 +82,7 @@
 				</form>
 			</c:otherwise>
 		</c:choose>
+		</c:if>
 	</div>
 
 	<script

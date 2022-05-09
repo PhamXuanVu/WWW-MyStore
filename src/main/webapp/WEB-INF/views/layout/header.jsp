@@ -1,5 +1,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
+<%@ taglib prefix="sec"
+	uri="http://www.springframework.org/security/tags"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -30,7 +31,6 @@ body {
 					<ul class="nav justify-content-center">
 						<li class="nav-item"><a class="nav-link active"
 							aria-current="page" href="${login }">Đăng nhập</a></li>
-						<li class="nav-item"><a class="nav-link" href="#">Kẹo</a></li>
 						<li class="nav-item dropdown"><a
 							class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
 							role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -42,6 +42,14 @@ body {
 					</ul>
 				</div>
 			</div>
+			<form style="width: 40%;" class=" d-flex my-2 my-lg-0"
+				action="${pageContext.request.contextPath}/danhmuc/timkiem"
+				method="POST" enctype="application/x-www-form-urlencoded">
+				<input name="tenSanPham" class="form-control " type="search"
+					placeholder="Tìm kiếm">
+				<button style="width: 35%;" class="btn btn-outline-primary"
+					type="submit">Tìm kiếm</button>
+			</form>
 		</nav>
 	</c:if>
 	<c:if test="${pageContext.request.userPrincipal.name != null}">
@@ -65,13 +73,13 @@ body {
 							<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
 								<sec:authorize
 									access="hasRole('ROLE_ADMIN') and isAuthenticated()">
-									<li><a class="dropdown-item" href="${admin }">Trang Admin</a></li>
+									<li><a class="dropdown-item" href="${admin }">Trang
+											Admin</a></li>
 								</sec:authorize>
 								<li><a class="dropdown-item"
 									href="${pageContext.request.contextPath}/perform_logout">Đăng
 										xuất</a></li>
 							</ul></li>
-						<li class="nav-item"><a class="nav-link" href="">Kẹo</a></li>
 						<li class="nav-item dropdown"><a
 							class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
 							role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -80,11 +88,22 @@ body {
 								<li><a class="dropdown-item" href="${keo}">Kẹo</a></li>
 								<li><a class="dropdown-item" href="${socola }">Socola</a></li>
 							</ul></li>
-							
-						<li class="nav-item"><a class="nav-link" href="#">Giỏ hàng</a></li>
+
+						<li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/gioHang">Giỏ
+								hàng</a></li>
 					</ul>
+
 				</div>
+
 			</div>
+			<form style="width: 40%;" class=" d-flex my-2 my-lg-0"
+				action="${pageContext.request.contextPath}/danhmuc/timkiem"
+				method="POST" enctype="application/x-www-form-urlencoded">
+				<input name="tenSanPham" class="form-control " type="search"
+					placeholder="Tìm kiếm">
+				<button style="width: 35%;" class="btn btn-outline-primary"
+					type="submit">Tìm kiếm</button>
+			</form>
 		</nav>
 	</c:if>
 </body>

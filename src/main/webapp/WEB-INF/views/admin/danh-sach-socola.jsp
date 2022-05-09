@@ -19,6 +19,18 @@
 				<jsp:include page="../layout/sidebar-admin.jsp" />
 			</div>
 			<div class="col-8">
+				<c:choose>
+					<c:when test="${param.addSuccess}">
+						<p style="color: red;" class="error">Thêm sản phẩm thành công!</p>
+					</c:when>
+					<c:when test="${param.updateSuccess}">
+						<p style="color: red;" class="error">Cập nhật sản phẩm thành
+							công!</p>
+					</c:when>
+					<c:when test="${param.deleteSuccess}">
+						<p style="color: red;" class="error">Xóa sản phẩm thành công!</p>
+					</c:when>
+				</c:choose>
 				<button type="button" class="btn btn-primary">
 					<a style="text-decoration: none" class="link-light"
 						href="${addSocola}">Thêm sản phẩm</a>

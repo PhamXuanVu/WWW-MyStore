@@ -61,7 +61,7 @@ public class NguoiDungDTO {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	
+
 	public String getDiaChi() {
 		return diaChi;
 	}
@@ -80,8 +80,18 @@ public class NguoiDungDTO {
 
 	public NguoiDungDTO() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
+
+	public NguoiDungDTO(String hoTenDem, String ten, String soDienThoai, String email, String diaChi, String matKhau) {
+		super();
+		this.hoTenDem = hoTenDem;
+		this.ten = ten;
+		this.soDienThoai = soDienThoai;
+		this.email = email;
+		this.diaChi = diaChi;
+		this.matKhau = matKhau;
+	}
+
 	
 	
 	

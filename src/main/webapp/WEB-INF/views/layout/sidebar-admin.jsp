@@ -11,16 +11,14 @@
 <body>
 	<c:url var="socola" value="/danhmuc/socola-admin" />
 	<c:url var="keo" value="/danhmuc/keo-admin" />
-	<c:url var="addKeo" value="/danhmuc/form-add-keo" />
 	<div class="d-flex" id="wrapper">
 		<!-- Sidebar-->
 		<div class="border-end bg-white" id="sidebar-wrapper">
-			<div class="sidebar-heading border-bottom bg-light">Start
-				Bootstrap</div>
+			<div class="sidebar-heading border-bottom bg-light">Admin</div>
 			<div class="list-group list-group-flush">
 				<a
 					class="list-group-item list-group-item-action list-group-item-light p-3"
-					href="#!">Dashboard</a>
+					href="${pageContext.request.contextPath }/user/nguoi-dung-admin">Người dùng</a>
 				<div class="accordion-item">
 					<h2 class="accordion-header" id="headingOne">
 						<button class="accordion-button" type="button"
@@ -42,11 +40,9 @@
 
 				<a
 					class="list-group-item list-group-item-action list-group-item-light p-3"
-					href="#!">Shortcuts</a> <a
+					href="#!">Hóa đơn</a> <a
 					class="list-group-item list-group-item-action list-group-item-light p-3"
-					href="${addKeo }">Overview</a> <a
-					class="list-group-item list-group-item-action list-group-item-light p-3"
-					href="#!">Events</a>
+					href="">Thống kê</a>
 
 			</div>
 
