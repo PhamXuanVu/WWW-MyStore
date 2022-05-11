@@ -17,6 +17,11 @@
 	<div class="container">
 		<div class="row justify-content-center">
 			<div class="col-md-6">
+			<c:choose>
+					<c:when test="${param.failure}">
+						<p style="color: red;" class="error">Email đã tồn tại! Hãy sử dụng email khác.</p>
+					</c:when>
+				</c:choose>
 				<div class="card">
 					<header class="card-header">
 						<h4 class="card-title mt-2">Đăng ký</h4>

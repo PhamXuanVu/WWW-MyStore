@@ -33,6 +33,9 @@
 									<p style="color: red;" class="error">Email hoặc mật khẩu
 										không chính xác!</p>
 								</c:when>
+								<c:when test="${param.success}">
+									<p style="color: red;" class="error">Đăng ký thành công!. Đăng nhập để mua hàng ngay</p>
+								</c:when>
 							</c:choose>
 						</div>
 					</div>

@@ -25,10 +25,7 @@ public class MyDBAuthenticationService implements UserDetailsService {
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         User user = userRepository.findByEmail(username);
 
-        if (user == null) {
-            throw new UsernameNotFoundException("User " //
-                    + username + " was not found in the database");
-        }
+    
 
         List<GrantedAuthority> grantList = new ArrayList<GrantedAuthority>();
 

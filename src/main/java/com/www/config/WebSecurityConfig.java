@@ -50,16 +50,17 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         // If no login, it will redirect to /login page.
 
         // For MANAGER only.
+        //Phân quyền cho người dùng
         http.authorizeRequests().antMatchers("/product/**").access("hasRole('ROLE_ADMIN')");
         http.authorizeRequests().antMatchers("/admin/**").access("hasRole('ROLE_ADMIN')");
+        http.authorizeRequests().antMatchers("/danhmuc/keo-admin").access("hasRole('ROLE_ADMIN')");
+        http.authorizeRequests().antMatchers("/danhmuc/socola-admin").access("hasRole('ROLE_ADMIN')");
+        http.authorizeRequests().antMatchers("/user/nguoi-dung-admin").access("hasRole('ROLE_ADMIN')");
         http.authorizeRequests().antMatchers("/cart/payment").authenticated();
+        http.authorizeRequests().antMatchers("/gioHang/*").permitAll();
         http.authorizeRequests().antMatchers("/danhmuc/*").permitAll();
         http.authorizeRequests().antMatchers("/user/login").permitAll();
         http.authorizeRequests().antMatchers("/user/register").permitAll();
-
-        http.authorizeRequests().antMatchers("/user/**").access("hasAnyRole('ROLE_ADMIN', 'ROLE_MEMBER')");
-
-        http.authorizeRequests().anyRequest().permitAll();
 
         // When the user has logged in as XX.
         // But access a page that requires role YY,

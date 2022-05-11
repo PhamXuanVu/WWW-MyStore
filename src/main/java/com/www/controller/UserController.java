@@ -78,10 +78,10 @@ public class UserController {
                 nguoiDung.setDiaChi(nguoiDungDTO.getDiaChi());
                 nguoiDungRepository.save(nguoiDung);
 
-                return new RedirectView(request.getContextPath() + "/user/login?success");
+                return new RedirectView(request.getContextPath() + "/user/login?success=true");
             }
 
-            return new RedirectView(request.getContextPath() + "/user/register?failure");
+            return new RedirectView(request.getContextPath() + "/user/register?failure=true");
     }
 	
 	@GetMapping("/nguoi-dung-admin")
