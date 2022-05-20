@@ -13,6 +13,7 @@
 </head>
 <body>
 	<c:url var="register" value="/user/register" />
+	<div class="container" >
 	<jsp:include page="layout/header.jsp" />
 
 	<section class="vh-100">
@@ -63,9 +64,10 @@
 					</div>
 				</div>
 			</div>
-
 		</form>
 	</section>
+	<jsp:include page="layout/footer.jsp" />
+	</div>
 	<script
 		src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
 		integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"

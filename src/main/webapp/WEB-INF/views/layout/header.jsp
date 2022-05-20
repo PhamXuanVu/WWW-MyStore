@@ -20,18 +20,15 @@ body {
 	<c:url var="keo" value="/danhmuc/keo" />
 	<c:url var="socola" value="/danhmuc/socola" />
 	<c:url var="admin" value="/admin/" />
-	<div>
-		<h1 style="text-align: center; color: red;">MTV-Shop</h1>
-	</div>
 	<c:if test="${pageContext.request.userPrincipal.name == null}">
-		<nav class="navbar navbar-expand-lg navbar-light bg-light">
+		<nav style="background-color: #929fba" class="navbar navbar-expand-lg navbar-light ">
 			<div class="container-fluid">
-				<a class="navbar-brand" href="${homePageUrl }">Trang chủ</a>
+				<a style="color: white" class="navbar-brand" href="${homePageUrl }">Trang chủ</a>
 				<div class="collapse navbar-collapse" id="navbarSupportedContent">
 					<ul class="nav justify-content-center">
-						<li class="nav-item"><a class="nav-link active"
+						<li class="nav-item"><a style="color: white" class="nav-link active"
 							aria-current="page" href="${login }">Đăng nhập</a></li>
-						<li class="nav-item dropdown"><a
+						<li class="nav-item dropdown"><a style="color: white"
 							class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
 							role="button" data-bs-toggle="dropdown" aria-expanded="false">
 								Danh mục sản phẩm </a>
@@ -53,9 +50,9 @@ body {
 		</nav>
 	</c:if>
 	<c:if test="${pageContext.request.userPrincipal.name != null}">
-		<nav class="navbar navbar-expand-lg navbar-light bg-light">
+		<nav style="background-color: #929fba" class="navbar navbar-expand-lg navbar-light">
 			<div class="container-fluid">
-				<a class="navbar-brand" href="${homePageUrl }">Trang chủ</a>
+				<a style="color: white" class="navbar-brand" href="${homePageUrl }">Trang chủ</a>
 				<button class="navbar-toggler" type="button"
 					data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
 					aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -64,7 +61,7 @@ body {
 				</button>
 				<div class="collapse navbar-collapse" id="navbarSupportedContent">
 					<ul class="nav justify-content-center">
-						<li class="nav-item dropdown"><a
+						<li class="nav-item dropdown"><a style="color: white"
 							class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
 							role="button" data-bs-toggle="dropdown" aria-expanded="false">
 								<c:out value="${nguoiDung.getHoTenDem() }" /> <c:out
@@ -80,7 +77,7 @@ body {
 									href="${pageContext.request.contextPath}/perform_logout">Đăng
 										xuất</a></li>
 							</ul></li>
-						<li class="nav-item dropdown"><a
+						<li class="nav-item dropdown"><a style="color: white"
 							class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
 							role="button" data-bs-toggle="dropdown" aria-expanded="false">
 								Danh mục sản phẩm </a>
@@ -89,7 +86,7 @@ body {
 								<li><a class="dropdown-item" href="${socola }">Socola</a></li>
 							</ul></li>
 
-						<li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/gioHang">Giỏ
+						<li class="nav-item"><a style="color: white" class="nav-link" href="${pageContext.request.contextPath}/gioHang">Giỏ
 								hàng</a></li>
 					</ul>
 

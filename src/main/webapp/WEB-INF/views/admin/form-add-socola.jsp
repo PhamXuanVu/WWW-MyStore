@@ -11,7 +11,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-12">
-				<jsp:include page="../layout/header.jsp" />
+				<jsp:include page="../layout/header-admin.jsp" />
 			</div>
 		</div>
 		<div class="row">
@@ -47,7 +47,7 @@
 								<label>Mô tả</label> <input name="moTa" type="text"
 									class="form-control" placeholder="">
 							</div>
-							<div class="col form-group">
+							<div class="form-group">
 								<label>Hình ảnh </label> <input name="hinhAnh" type="file"
 									class="form-control" placeholder="">
 							</div>
@@ -62,6 +62,7 @@
 			</div>
 
 		</div>
+		<jsp:include page="../layout/footer-admin.jsp"></jsp:include>
 	</div>
 </body>
 </html>

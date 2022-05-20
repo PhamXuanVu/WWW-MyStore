@@ -14,29 +14,35 @@
 <link rel="stylesheet" href="${productDetail }" />
 </head>
 <body>
-	<jsp:include page="layout/header.jsp" />
-	<form class="m-auto" action="${pageContext.request.contextPath}/gioHang/add" method="POST">
-		<div style="margin-top: 50px;" class="container">
-			<div class="row">
-				<div class="col-md-5">
-					<c:url var="image" value="${sanPham.hinhAnh}" />
-					<img src="${image}" class="card-img-top">
-				</div>
-				<div class="col-md-7">
-					<input name="id" type="hidden" value="${sanPham.getId()}">
-					<div class="newarrival text-center">NEW</div>
-					<h2 >${sanPham.tenSanPham}</h2>
-					<p>${sanPham.moTa }</p>
+	<div class="container">
+		<jsp:include page="layout/header.jsp" />
+		<form class="m-auto"
+			action="${pageContext.request.contextPath}/gioHang/add" method="POST">
+			<div style="margin-top: 50px;" class="container">
+				<div class="row">
+					<div class="col-md-5">
+						<c:url var="image" value="${sanPham.hinhAnh}" />
+						<img src="${image}" class="card-img-top">
+					</div>
+					<div class="col-md-7">
+						<input name="id" type="hidden" value="${sanPham.getId()}">
+						<div class="newarrival text-center">NEW</div>
+						<h2>${sanPham.tenSanPham}</h2>
+						<p>${sanPham.moTa }</p>
 
-					<P class="price">${sanPham.getGiaFormat()}</P>
-					<label>Số lượng:</label> <input name="soLuong" type="number" value="1">
-					<button type="submit" class="btn btn btn-secondary cart">Thêm
-						vào giỏ hàng</button>
+						<P class="price">${sanPham.getGiaFormat()}</P>
+						<label>Số lượng:</label> <input name="soLuong" type="number"
+							value="1">
+						<button type="submit" class="btn btn btn-secondary cart">Thêm
+							vào giỏ hàng</button>
+					</div>
 				</div>
 			</div>
+		</form>
+		<div>
+			<jsp:include page="layout/footer.jsp" />
 		</div>
-
-	</form>
+	</div>
 	<script
 		src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
 		integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"

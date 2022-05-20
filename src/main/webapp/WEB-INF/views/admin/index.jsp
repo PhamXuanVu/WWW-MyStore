@@ -18,7 +18,7 @@ body {
 	<div class="container">
 		<div class="row">
 			<div class="col-12">
-				<jsp:include page="../layout/header.jsp" />
+				<jsp:include page="../layout/header-admin.jsp" />
 			</div>
 		</div>
 		<div class="row">
@@ -29,6 +29,9 @@ body {
 				
 			</div>
 		</div>
-	</div>
+			<div class="col-12">
+				<jsp:include page="../layout/footer-admin.jsp" />
+			</div>
+		</div>
 </body>
 </html>

@@ -51,21 +51,6 @@ public class HoaDonControler {
 			List<ChiTietHoaDon> chiTietHoaDons = new ArrayList<ChiTietHoaDon>();
 			ChiTietHoaDon chiTietHoaDon = new ChiTietHoaDon();
 			chiTietHoaDon.setHoaDon(hoaDon2);
-			
-//			List<ChiTietHoaDon> chiTietHoaDons = new ArrayList<ChiTietHoaDon>();
-//			ChiTietHoaDon chiTietHoaDon = new ChiTietHoaDon();
-//			chiTietHoaDon.set
-			
-//			chiTietHoaDonRepository.saveAll(chiTietHoaDons);
-			System.out.println("BBB" + hoaDon2);
-			
-//			HoaDon hoaDon1 = new HoaDon();
-//			hoaDon1.setNgayMua(new Date());
-//
-			
-//			hoaDon1.setNguoiDung(nguoiDung);
-//			hoaDon1.setSanPhams(chiTietHoaDons);
-//			hoaDonRepository.save(hoaDon1);
 			return "redirect:/gioHang/thanhToan?success=true";
 		}catch (Exception e) {
 			e.printStackTrace();

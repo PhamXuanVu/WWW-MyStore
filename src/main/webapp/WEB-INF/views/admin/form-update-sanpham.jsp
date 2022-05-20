@@ -11,7 +11,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-12">
-				<jsp:include page="../layout/header.jsp" />
+				<jsp:include page="../layout/header-admin.jsp" />
 			</div>
 		</div>
 		<div class="row">
@@ -27,14 +27,11 @@
 						<form class="m-auto"
 							action="${pageContext.request.contextPath}/danhmuc/saveUpdate"
 							method="POST" enctype="application/x-www-form-urlencoded">
-
+							<input name="id" type="hidden" class="form-control"
+								value="${sanPham.getId()}"> <input name="loaiSanPham"
+								type="hidden" class="form-control"
+								value="${sanPham.loaiSanPham}">
 							<div class="form-row">
-								<div class="col form-group">
-									<input name="id" type="hidden" class="form-control"
-										value="${sanPham.getId()}">
-										<input name="loaiSanPham" type="hidden" class="form-control"
-										value="${sanPham.loaiSanPham}">
-								</div>
 								<div class="col form-group">
 									<label>Tên sản phẩm </label> <input name="tenSanPham"
 										type="text" class="form-control" value="${sanPham.tenSanPham}">
@@ -52,7 +49,7 @@
 								<label>Mô tả</label> <input name="moTa" type="text"
 									class="form-control" value="${sanPham.moTa}">
 							</div>
-							<div class="col form-group">
+							<div class="form-group">
 								<label>Hình ảnh </label> <input name="hinhAnh" type="file"
 									class="form-control">
 							</div>
@@ -70,6 +67,7 @@
 			</div>
 
 		</div>
+		<jsp:include page="../layout/footer-admin.jsp"></jsp:include>
 	</div>
 </body>
 </html>

@@ -10,39 +10,42 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<jsp:include page="layout/header.jsp" />
-	<div class="row">
-		<c:if test="${empty sanPhamTimKiem}">
-				<h3 style="text-align: center;">Không tìm thấy sản phẩm tương ứng!</h3>
+	<div class="container">
+		<jsp:include page="layout/header.jsp" />
+		<div class="row">
+			<c:if test="${empty sanPhamTimKiem}">
+				<h3 style="text-align: center;">Không tìm thấy sản phẩm tương
+					ứng!</h3>
 			</c:if>
-		<c:forEach items="${sanPhamTimKiem}" var="sp">
-			<c:if test="${sp != null }">
-				<div class="card"
-					style="width: 200px; margin-left: 50px; margin-top: 50px; text-align: center;">
-					<c:url var="image" value="${sp.hinhAnh}" />
-					<img class="rounded" style="heigth: 250px" src="${image}"
-						alt="Card image cap">
-					<div class="card-body">
-						<p class="card-text" style="font-weight: 700;">${sp.tenSanPham}</p>
-						<p class="card-text">${sp.getGiaFormat()}</p>
-						<div class="button_actions clearfix">
+			<c:forEach items="${sanPhamTimKiem}" var="sp">
+				<c:if test="${sp != null }">
+					<div class="card"
+						style="width: 200px; margin-left: 50px; margin-top: 50px; text-align: center;">
+						<c:url var="image" value="${sp.hinhAnh}" />
+						<img class="rounded" style="heigth: 250px" src="${image}"
+							alt="Card image cap">
+						<div class="card-body">
+							<p class="card-text" style="font-weight: 700;">${sp.tenSanPham}</p>
+							<p class="card-text">${sp.getGiaFormat()}</p>
+							<div class="button_actions clearfix">
 
-							<button id="btnSubmit"
-								class="btn btn_base btn_add_cart btn-cart add_to_cart"
-								style="background-color: red">
-								<span class="text_1"><a style="text-decoration: none"
-									class="link-warning"
-									href="${pageContext.request.contextPath }/chiTietSP/${sp.id }">Xem
-										chi tiết</a></span>
-							</button>
+								<button id="btnSubmit"
+									class="btn btn_base btn_add_cart btn-cart add_to_cart"
+									style="background-color: red">
+									<span class="text_1"><a style="text-decoration: none"
+										class="link-warning"
+										href="${pageContext.request.contextPath }/chiTietSP/${sp.id }">Xem
+											chi tiết</a></span>
+								</button>
 
+							</div>
 						</div>
 					</div>
-				</div>
-			</c:if>
-		</c:forEach>
+				</c:if>
+			</c:forEach>
+		</div>
+		<jsp:include page="layout/footer.jsp" />
 	</div>
-<%-- 			<jsp:include page="layout/footer.jsp" /> --%>
 	<script
 		src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
 		integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"

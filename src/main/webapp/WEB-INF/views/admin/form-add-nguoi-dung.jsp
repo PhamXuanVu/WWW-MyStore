@@ -16,7 +16,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-12">
-				<jsp:include page="../layout/header.jsp" />
+				<jsp:include page="../layout/header-admin.jsp" />
 			</div>
 		</div>
 		<div class="row">
@@ -72,6 +72,7 @@
 			</div>
 
 		</div>
+		<jsp:include page="../layout/footer-admin.jsp"></jsp:include>
 	</div>
 		<script
 		src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
